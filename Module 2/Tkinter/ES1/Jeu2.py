@@ -23,12 +23,14 @@ OUI = ["y", "yes", "oui", "o"]
 NON = ["n", "non", "no"] 
 DEFAULT_FONT = "Arial 15 bold"
 #Liste de morceaus valide
-VALID_PIECES = {"5.00$": 500,
+VALID_PIECES = {"10.00$": 1000,
+                "5.00$": 500,
                 "2.00$": 200, 
                 "1.00$": 100,
                 "0.25$":  25,
                 "0.10$":  10, 
-                "0.05$":   5}
+                "0.05$":   5,
+                "0.01$":   1}
 
 #Génere un nombre pour l'argent
 def genereMonnaie(lim = 1000):
@@ -194,13 +196,13 @@ lblMonnaie = tk.Label(jeu, text=f"Donne: {printMonnaieREC(monnaie)}", font=DEFAU
 lblMonnaie.grid(row=0, column=0, padx=10, pady=5)
 
 
-
+rows = 2
 inputs = tk.Frame(jeu)
 inputList = []
 i:int = 0
 for piece in VALID_PIECES:
     field = NumberField(inputs, piece)
-    field.grid(column=i%2, row=i//2, pady=10, padx=10)
+    field.grid(column=i%rows, row=i//rows, pady=10, padx=10)
     field.pad(x=15)
     field._label.configure(font=DEFAULT_FONT)
     inputList.append(field)
