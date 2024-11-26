@@ -14,14 +14,15 @@ from Utils import *
 import Jeu1
 import Jeu2
 
-num:int = -1
-nom:str = None
+
 
 
 
 
 #Main toggle du jeu
 def main():
+    num:int = -1
+    nom:str = None
     def commenceJeu():
         #Quite le fenètre tkinter
         ft.destroy()
@@ -32,9 +33,10 @@ def main():
             #commence jeu 2
             Jeu2.main(nom)
 
-
     def commence():
-        #Cherche les données    
+        #Cherche les données
+        nonlocal num
+        nonlocal nom    
         niveau = txtNiveau.get()
         nom = txtNom.get()
         #Assure que le numéro est valide
@@ -53,6 +55,8 @@ def main():
                 #commende jeu 2 après le bouton
                 lblPrejeu.config(text=f"Bonjour {nom}! \n Vous avez pris le deuxième jeu: Calcul de monnaie. \n Cliquez sur le bouton pour commencer")
                 num = 1
+
+        
     
     # Tkinter
     # Fenètre primaire
