@@ -1,0 +1,121 @@
+[
+    {
+        "titre": "Harry Potter",
+        "auteur": "J.K. Rowling",
+        "annee": "2001",
+        "genre": "Fantasy",
+        "langues": [
+            "Anglais",
+            "Francais"
+        ]
+    },
+    {
+        "titre": "The DaVinci Code",
+        "auteur": "Dan Brown",
+        "annee": "2001",
+        "genre": "Sci-Fi",
+        "langues": [
+            "Anglais",
+            "Francais"
+        ]
+    },
+    {
+        "titre": "a",
+        "auteur": "a",
+        "annee": "2001",
+        "genre": "a",
+        "langues": [
+            "a"
+        ]
+    },
+    {
+        "titre": "b",
+        "auteur": "b",
+        "annee": "2001",
+        "genre": "b",
+        "langues": [
+            "b"
+        ]
+    },
+    {
+        "titre": "c",
+        "auteur": "c",
+        "annee": "2002",
+        "genre": "c",
+        "langues": [
+            "c"
+        ]
+    },
+    {
+        "titre": "d",
+        "auteur": "d",
+        "annee": "d",
+        "genre": "d",
+        "langues": [
+            "d"
+        ]
+    },
+    {
+        "titre": "e",
+        "auteur": "e",
+        "annee": "e",
+        "genre": "e",
+        "langues": [
+            "e"
+        ]
+    },
+    {
+        "titre": "f",
+        "auteur": "f",
+        "annee": "f",
+        "genre": "f",
+        "langues": [
+            "f"
+        ]
+    },
+    {
+        "titre": "g",
+        "auteur": "gg",
+        "annee": "g",
+        "genre": "g",
+        "langues": [
+            "g"
+        ]
+    },
+    {
+        "titre": "h",
+        "auteur": "h",
+        "annee": "h",
+        "genre": "h",
+        "langues": [
+            "h"
+        ]
+    },
+    {
+        "titre": "i",
+        "auteur": "i",
+        "annee": "i",
+        "genre": "i",
+        "langues": [
+            "i"
+        ]
+    },
+    {
+        "titre": "as",
+        "auteur": "a",
+        "annee": "a",
+        "genre": "s",
+        "langues": [
+            "s"
+        ]
+    },
+    {
+        "titre": "asd",
+        "auteur": "asd",
+        "annee": "asd",
+        "genre": "asd",
+        "langues": [
+            "asd"
+        ]
+    }
+]
