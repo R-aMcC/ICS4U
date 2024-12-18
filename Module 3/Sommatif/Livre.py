@@ -81,11 +81,11 @@ class LivreFt(tk.Frame):
         for i, (key, value) in enumerate(self._livreDict.items()):
             if(key == "langues"):
                 lblTitre = tk.Label(self, text="Langues:", width=10, anchor="w")
-                lblContent = tk.Label(self, text="\n".join(value), justify=tk.LEFT, wraplength=150, anchor="w")
+                lblContent = tk.Label(self, text="\n".join(value), justify=tk.LEFT, wraplength=120, anchor="w")
             else:
                 niceKey = self.getNicerKey(key)
                 lblTitre = tk.Label(self, text=niceKey, width=10, anchor="w")
-                lblContent = tk.Label(self, text=value, justify=tk.LEFT, wraplength=150, anchor="w")   
+                lblContent = tk.Label(self, text=value, justify=tk.LEFT, wraplength=120, anchor="w")   
             lblTitre.grid(row=i, column=0, sticky="NW", padx = 7, pady=2)
             lblContent.grid(row=i, column=1, sticky="NW")
             self._elements[key] = (lblTitre, lblContent)     
@@ -97,10 +97,12 @@ class LivreFt(tk.Frame):
     
 class LivreENLV(tk.Frame):
     def __init__(self, master, livre:Livre):
-        super().__init__(master)
+        super().__init__(master, relief="solid", borderwidth=1)
+        #self.columnconfigure(0, weight=0, minsize=100)
+        #self.columnconfigure(1, weight=1)
         self._livre = livre
-        self._lblTitre = tk.Label(self, text=livre.titre)
-        self._btnElever = tk.Button(self, text="Enlever")
+        self._lblTitre = tk.Label(self, text=livre.titre, width=20, anchor="w", wraplength=100, padx=5, pady=5)
+        self._btnElever = tk.Button(self, text="Enlever", width=7, padx=5, pady=5)
         self._lblTitre.grid(row=0, column=0)
         self._btnElever.grid(row=0, column=1)
     

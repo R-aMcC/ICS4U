@@ -20,102 +20,73 @@
         ]
     },
     {
-        "titre": "a",
-        "auteur": "a",
-        "annee": "2001",
-        "genre": "a",
+        "titre": "The Hunger Games",
+        "auteur": "Suzanne Collins",
+        "annee": "2008",
+        "genre": "Dystopian",
         "langues": [
-            "a"
+            "Anglais",
+            "Francais"
         ]
     },
     {
-        "titre": "b",
-        "auteur": "b",
-        "annee": "2001",
-        "genre": "b",
+        "titre": "The Hobbit",
+        "auteur": "J.R.R. Tolkien",
+        "annee": "1937",
+        "genre": "Fantasy",
         "langues": [
-            "b"
+            "Anglais",
+            "Francais"
         ]
     },
     {
-        "titre": "c",
-        "auteur": "c",
-        "annee": "2002",
-        "genre": "c",
+        "titre": "The Lord of the Rings",
+        "auteur": "J.R.R. Tolkien",
+        "annee": "1954",
+        "genre": "Fantasy",
         "langues": [
-            "c"
+            "Anglais",
+            "Francais"
         ]
     },
     {
-        "titre": "d",
-        "auteur": "d",
-        "annee": "d",
-        "genre": "d",
+        "titre": "The Chronicles of Narnia",
+        "auteur": "C.S. Lewis",
+        "annee": "1950",
+        "genre": "Fantasy",
         "langues": [
-            "d"
+            "Anglais",
+            "Francais"
         ]
     },
     {
-        "titre": "e",
-        "auteur": "e",
-        "annee": "e",
-        "genre": "e",
+        "titre": "The Hitchhiker's Guide to the Galaxy",
+        "auteur": "Douglas Adams",
+        "annee": "1979",
+        "genre": "Sci-Fi",
         "langues": [
-            "e"
+            "Anglais",
+            "Francais"
         ]
     },
     {
-        "titre": "f",
-        "auteur": "f",
-        "annee": "f",
-        "genre": "f",
+        "titre": "The War of the Worlds",
+        "auteur": "H.G. Wells",
+        "annee": "1898",
+        "genre": "Sci-Fi",
         "langues": [
-            "f"
+            "Anglais",
+            "Francais"
         ]
     },
     {
-        "titre": "g",
-        "auteur": "gg",
-        "annee": "g",
-        "genre": "g",
+        "titre": "The Time Machine",
+        "auteur": "H.G. Wells",
+        "annee": "1895",
+        "genre": "Sci-Fi",
         "langues": [
-            "g"
-        ]
-    },
-    {
-        "titre": "h",
-        "auteur": "h",
-        "annee": "h",
-        "genre": "h",
-        "langues": [
-            "h"
-        ]
-    },
-    {
-        "titre": "i",
-        "auteur": "i",
-        "annee": "i",
-        "genre": "i",
-        "langues": [
-            "i"
-        ]
-    },
-    {
-        "titre": "as",
-        "auteur": "a",
-        "annee": "a",
-        "genre": "s",
-        "langues": [
-            "s"
-        ]
-    },
-    {
-        "titre": "asd",
-        "auteur": "asd",
-        "annee": "asd",
-        "genre": "asd",
-        "langues": [
-            "asd"
+            "Anglais",
+            "Francais"
         ]
     }
 ]
