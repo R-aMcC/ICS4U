@@ -81,7 +81,7 @@ class LivreFt(tk.Frame):
                 lblTitre = tk.Label(self, text="Langues:", width=10, anchor="w")
                 lblContent = tk.Label(self, text="\n".join(value), justify=tk.LEFT, wraplength=120, anchor="w")
             else:
-                niceKey = self.getNicerKey(key) # Convertit le titre en format plus beau. I.E. "titre" devient "Titre: "
+                niceKey = self.titrePropre(key) # Convertit le titre en format plus beau. I.E. "titre" devient "Titre: "
                 lblTitre = tk.Label(self, text=niceKey, width=10, anchor="w")
                 lblContent = tk.Label(self, text=value, justify=tk.LEFT, wraplength=120, anchor="w")   
             lblTitre.grid(row=i, column=0, sticky="NW", padx = 7, pady=2)
@@ -90,7 +90,7 @@ class LivreFt(tk.Frame):
 
 
     @staticmethod
-    def getNicerKey(key: str):
+    def titrePropre(key: str):
         return key.capitalize()+": "
     
 class LivreENLV(tk.Frame):
@@ -113,16 +113,5 @@ class LivreENLV(tk.Frame):
     @btnElever.setter
     def btnElever(self, command): # Propriété pour changer la commande du bouton
         self._btnElever.configure(command=command) 
-
-    
-
-    
-
-
-
-
-        
-        
-
 
         

@@ -41,7 +41,7 @@ def main():
             for langue in langues.split(","): # Ajoute les languages
                 livre.ajouteLangue(langue.strip()) #Assure aucun "Trailing space"
             livres[titre] = livre # Ajoute le livre dans le dictionaire
-            saufegarde() # Saufegarde la liste
+            sauvegarde() # Saufegarde la liste
             afficher() # "Refresh" l'écran
             forget(FTAdj) # Retourne à l'écran d'accueil
         
@@ -129,7 +129,7 @@ def main():
         def enleverLivre(key):
             if key in livres: # Si l'élément est dans le dictionaire, enlève le
                 del livres[key]
-                saufegarde() # saufgarde le nouveau dictionaire dans le fichier
+                sauvegarde() # saufgarde le nouveau dictionaire dans le fichier
                 afficher() # "Refresh" l'écran
                 forget(FTenlever) # Retourne à l'écran d'accueil
 
@@ -211,9 +211,9 @@ def load():
         return livres
     
 
-def saufegarde():
+def sauvegarde():
     """
-    Méthode pour saufegarder les livres dans le fichier
+    Méthode pour enregistrer les livres dans le fichier
     """
     with open("biblio.json", "w") as f: # Ouvre le fichier en écriture
         json.dump([livre.toJson() for livre in livres.values()], f, indent=4) # Écrit les livres dans le fichier, en suivant le formatage JSON
