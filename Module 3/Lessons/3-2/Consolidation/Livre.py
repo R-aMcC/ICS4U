@@ -52,7 +52,15 @@ class Livre:
     
     def __len__(self):
         return len(self._langues)
-
+    
+    def toJson(self):
+        return {
+            "titre": self._titre,
+            "auteur": self._auteur,
+            "annee": self._annee,
+            "genre": self._genre,
+            "langues": self._langues
+        }
 
 
 

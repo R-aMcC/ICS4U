@@ -68,9 +68,7 @@ class Livre:
 
 class LivreFt(tk.Frame):
     def __init__(self, master, livre: Livre):
-        super().__init__(master, width=250, height=150, borderwidth=1, relief="solid")
-
-        self.pack_propagate(False)
+        super().__init__(master, width=250, height=150, borderwidth=1, relief="solid") # Créé le cadre pour toute l'information
         self._livre:Livre = livre
         self._livreDict = self._livre.toJson()
         self.columnconfigure(0, weight=0, minsize=100)
@@ -78,12 +76,12 @@ class LivreFt(tk.Frame):
 
 
         self._elements = {}
-        for i, (key, value) in enumerate(self._livreDict.items()):
-            if(key == "langues"):
+        for i, (key, value) in enumerate(self._livreDict.items()): # Créé les labels pour chaque élément du livre
+            if(key == "langues"): # Si c'est la liste des langues, on les affiche une par ligne
                 lblTitre = tk.Label(self, text="Langues:", width=10, anchor="w")
                 lblContent = tk.Label(self, text="\n".join(value), justify=tk.LEFT, wraplength=120, anchor="w")
             else:
-                niceKey = self.getNicerKey(key)
+                niceKey = self.getNicerKey(key) # Convertit le titre en format plus beau. I.E. "titre" devient "Titre: "
                 lblTitre = tk.Label(self, text=niceKey, width=10, anchor="w")
                 lblContent = tk.Label(self, text=value, justify=tk.LEFT, wraplength=120, anchor="w")   
             lblTitre.grid(row=i, column=0, sticky="NW", padx = 7, pady=2)
@@ -98,24 +96,22 @@ class LivreFt(tk.Frame):
 class LivreENLV(tk.Frame):
     def __init__(self, master, livre:Livre):
         super().__init__(master, relief="solid", borderwidth=1)
-        #self.columnconfigure(0, weight=0, minsize=100)
-        #self.columnconfigure(1, weight=1)
         self._livre = livre
-        self._lblTitre = tk.Label(self, text=livre.titre, width=20, anchor="w", wraplength=100, padx=5, pady=5)
-        self._btnElever = tk.Button(self, text="Enlever", width=7, padx=5, pady=5)
+        self._lblTitre = tk.Label(self, text=livre.titre, width=20, anchor="w", wraplength=100, padx=5, pady=5) # Créé le label pour le titre
+        self._btnElever = tk.Button(self, text="Enlever", width=7, padx=5, pady=5) # Créé le bouton pour enlever le livre
         self._lblTitre.grid(row=0, column=0)
         self._btnElever.grid(row=0, column=1)
     
-    @property
-    def livre(self):
+    @property 
+    def livre(self): # Propriété pour obtenir le livre
         return self._livre
 
     @property
-    def btnElever(self):
+    def btnElever(self): # Propriété pour obtenir le bouton
         return self._btnElever
 
     @btnElever.setter
-    def btnElever(self, command):
+    def btnElever(self, command): # Propriété pour changer la commande du bouton
         self._btnElever.configure(command=command) 
 
     

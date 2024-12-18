@@ -63,8 +63,7 @@ def main():
         # Crée une nouvelle fenêtre pour ajouter un livre
         ftAdd = tk.Toplevel(ft)
         lblInfo = tk.Label(ftAdd, text="Ajouter un livre \n Remplis toute les informations. \n Sépare les langues par des virgules.")
-        lblInfo.grid(row=0, column=0)
-        
+        lblInfo.grid(row=0, column=0)        
         # Crée des champs de saisie pour les détails du livre
         ansTitre = AnswerField(ftAdd) 
         ansTitre.label = "Titre"
@@ -89,14 +88,17 @@ def main():
         ftAdd.mainloop()  # Démarre la boucle d'événements pour la fenêtre d'ajout de livre
 
     # Charge les livres depuis le fichier JSON
-    with open("biblio.json", "r") as f:
-        data = json.load(f)
-        livres = {}
-        for livre in data:
-            new_livre = l.Livre(livre["titre"], livre["auteur"], livre["annee"], livre["genre"])
-            for langue in livre["langues"]:
-                new_livre.ajouterLangue(langue)
-            livres[new_livre.titre] = new_livre
+    try:
+        with open("biblio.json", "r") as f:
+            data = json.load(f)
+            livres = {}
+            for livre in data:
+                new_livre = l.Livre(livre["titre"], livre["auteur"], livre["annee"], livre["genre"])
+                for langue in livre["langues"]:
+                    new_livre.ajouterLangue(langue)
+                livres[new_livre.titre] = new_livre
+    except FileNotFoundError:
+        print("Aucun fichier trouvé. Assurez-vous que vous êtes dans le directoire racine du projet ")
 
     # Crée la fenêtre principale de l'application
     ft = tk.Tk()
