@@ -1,0 +1,46 @@
+Classe Livre:
+    - Titre
+    - Auteur
+    - Année de publication
+    - Genre (ie Fantasy, Science-fiction, etc...)
+    - Langues de publication
+
+
+Classe LiveOBJ:
+    Élément visuel pour contennit l'information du Livre
+    - Texts pour chaque Élément de Livre
+
+
+Classe LivreENLV:
+    Élément pour enlever un livre de la liste
+    Contient le titre, et un bouton qui l'enlève
+
+
+Éléments UI:
+    Deux grand cadres:
+        Main:
+            - Cadre avec livres
+                - Contient tout les éléments LivreENLV
+            - Titre 
+        Choix: (1 de 3, choisis avec bouton):
+            Base: 
+                - Contient titre, deux boutons (un pour chaque autre)
+
+            Ajouter: 
+                - Contient toute les champs pour ajouter un livre
+            Enlever:
+                - Contient toute les éléments LivreENLV pour enlever un livre
+
+En bref, on voit tous les livres dans le haut, avec des boutons pour ajouter ou enlever des livres
+Assure qu'on limite la grandeur du cadre, et qu'on scroll si il y a trops d'éléments dans le dictionaire
+
+
+
+STOCKAGE PERMENANTE:
+    Utilise Fichier biblio.json pour sauvegarder toute les informations, avec les éléments comme éléments JSON dans le Fichier
+
+Méthodes globales:
+    - Sauvegarder les données
+    - "Load" Les données
+    - Retour au "Base" Cadre
+    

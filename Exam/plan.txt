@@ -1,0 +1,18 @@
+- Prends ES de Mod.2
+    - on prends déja des données
+    - Faut simplement les sauvées dans un fichier JSON - SAUFEGARDE NOMBRE DE QUESTIONS RÉUSSIT ET NOMBRE DE QUESTION FALLI ET POURCENTAGE
+
+- Display de données
+    - Ajoute une option pour voir les résultats
+    - recommende un jeu aulieu de les forcer dans le jeu
+    - demande si enseignant ou élève
+    - si enseignant, voiut tous les résultats. - voit moyenne globale 
+    - si élève, voit seulement ses résultats - voit sa moyenne 
+    - Sépare les résultats pour les deux jeux
+
+- Pages
+    - Main
+        - Age, nom
+    - Selection de jeuè
+        - Jeu 1,Jeu 2, résultats
+        -  Recommandation basé sur l'age/année scolaire
