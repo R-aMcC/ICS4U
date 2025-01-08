@@ -55,7 +55,7 @@ def vide():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
-
+"""
 def saufegarde(nom, jeu, resultats):
     # Sauvegarde les résultats dans un fichier JSON
     if(not os.path.exists("resultats.json")):
@@ -76,3 +76,35 @@ def saufegarde(nom, jeu, resultats):
         else:
             data[jeu][nom] = {"reussit": resultats[0], "echecs": resultats[1]}
         json.dump(data, f, indent=4)
+"""
+def sauvegarde(nom, jeu, resultats):
+    # Sauvegarde les résultats dans un fichier JSON
+    if(not os.path.exists("resultats.json")):
+        with open("resultats.json", "w") as f:
+            json.dump([{},{}], f, indent=4)
+    with open("resultats.json", "r+") as f: 
+        data = None
+        try:
+            data = json.load(f)
+        except ValueError as e:
+            if isinstance(e, json.decoder.JSONDecodeError):
+                print(f"is instance, message = {e.msg}")
+                if(e.msg == "Expecting value"):
+                    print("Empty file, manually feeding data")
+                    data == [{}, {}]
+            else:
+                raise RuntimeError("Something went wrong")
+        f.seek(0)
+        f.truncate()
+        if(data == None):
+            data = [{},{}]
+            # SAves the results in a list. Since no results exist, create the list
+            data[jeu][nom] = [{"reussit": resultats[0], "echecs": resultats[1]}]
+        elif nom in data[jeu]:
+            dataNom:list = data[jeu][nom] # list
+            dataNom.append({"reussit": resultats[0], "echecs": resultats[1]})
+        else:
+            data[jeu][nom] = [{"reussit": resultats[0], "echecs": resultats[1]}]
+        json.dump(data, f, indent=4)
+
+#saufegarde("ryan", 0, [1, 2])

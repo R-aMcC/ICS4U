@@ -1,9 +1,23 @@
 [
     {
-        "ryan mccracken": {
-            "reussit": 34,
-            "echecs": 8
-        }
+        "ryan": [
+            {
+                "reussit": 1,
+                "echecs": 2
+            },
+            {
+                "reussit": 1,
+                "echecs": 2
+            },
+            {
+                "reussit": 1,
+                "echecs": 2
+            },
+            {
+                "reussit": 1,
+                "echecs": 2
+            }
+        ]
     },
     {}
 ]

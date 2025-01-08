@@ -171,7 +171,7 @@ def titre():
 
 
 
-def main():
+def main(nom):
     questions = []
     operateur = ""
     # Boucle principale
@@ -204,6 +204,7 @@ def main():
 
         y = len(reussit)
         n = len(nonReussit)
+        sauvegarde(nom, 0, [y, n])
         #trouve les opérateurs les plus et moins difficiles
         meilleur, pire = calculDifficultees(reussit, nonReussit)
         titre()
