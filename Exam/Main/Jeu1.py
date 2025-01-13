@@ -171,7 +171,8 @@ def titre():
 
 
 
-def main(nom):
+def main(nom, parent):
+    parent.destroy()
     questions = []
     operateur = ""
     # Boucle principale
@@ -231,6 +232,7 @@ def main(nom):
             print(f"Pour réessayer avec seulement des questions de {pire[2]}, entrer \"3\".")
         print(f"Pour quitter, entrer \"q\".")
         inp = input("Choix: ")
+
         while(inp != "1" and inp != "2" and inp != "3" and inp != "q"):
             #assure que l'entrée est valide
             vide()

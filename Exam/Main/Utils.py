@@ -13,6 +13,7 @@ Description: Utilitées pour les 3 autres fichiers
 
 import os
 import json
+import tkinter as tk
 
 
 # Cherche un nombre entier de l'utilisateur
@@ -107,4 +108,13 @@ def sauvegarde(nom, jeu, resultats):
             data[jeu][nom] = [{"reussit": resultats[0], "echecs": resultats[1]}]
         json.dump(data, f, indent=4)
 
-#saufegarde("ryan", 0, [1, 2])
+def oubli(main, type = tk.Frame, grid = True):
+        """Méthode pour oublier les widgets \n
+        Oublie tous les widgets de type donné dans une fenètre donnée
+        """
+        for widget in main.winfo_children():
+            if isinstance(widget, type):
+                if grid:
+                    widget.grid_forget()
+                else:
+                    widget.pack_forget()

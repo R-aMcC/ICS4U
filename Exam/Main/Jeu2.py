@@ -12,6 +12,7 @@ Description: Le jeu donne une somme d'argent à l'utilisatuer, et il doit
 from Utils import *
 from Class import *
 import random
+import tkinter as tk
 
 
 class Results(tk.Frame):
@@ -116,20 +117,16 @@ def piecesMonnaie(prix):
     return pieces_recus
 
 
-def main(nom = ""):
+def main(nom = "", parent = None):
+    if parent:
+        parent.destroy()
     """
     Méthode principale pour le jeu de monnaie
     """
     # Les résultats
     scores = [0, 0]
 
-    def oubli(main, type = tk.Frame):
-        """Méthode pour oublier les widgets \n
-        Oublie tous les widgets de type donné dans une fenètre donnée
-        """
-        for widget in main.winfo_children():
-            if isinstance(widget, type):
-                widget.grid_forget()
+    
         
 
 
@@ -150,6 +147,7 @@ def main(nom = ""):
         lbl.grid(row=0, column=0, padx=10, pady=5, rowspan=2)
         btn = tk.Button(resTotal, text="Terminé", font=DEFAULT_FONT, command=app.quit)
         btn.grid(row=2, column=0, padx=10, pady=5)
+        sauvegarde(nom, 1, scores)
 
         #Oublie les anciens frames
         oubli(app)

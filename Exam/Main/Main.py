@@ -24,15 +24,6 @@ import Selection
 def main():
     num:int = -1
     nom:str = None
-    def commenceJeu():
-        #Quite le fenètre tkinter
-        ft.destroy()
-        if(num == 0):
-            #commence jeu 1
-            Jeu1.main()
-        else:
-            #commence jeu 2
-            Jeu2.main(nom)
 
     def commence():
         #Cherche les données
@@ -44,30 +35,17 @@ def main():
         if(not(niveau.isdigit() and (int(niveau)<=12 and int(niveau)>=0))):
             lblInfo.configure(text="Assurez vous que \"Niveau \" est un niveau valide. \n (0-12, 0 pour maternelle/jardin)")
         else:
-            menuPrincipaleElements.pack_forget()
+            menuPrincipale.pack_forget()
             Selection.main(ft, 0 if int(niveau)<=2 else 1, nom)
-            """
-            #Change de menu
-            lblInfo.configure(text="")
-            menuAvantJeu.pack()
-            if(int(niveau)<=2):
-                #Commence jeu 1 après le bouton
-                lblPrejeu.config(text=f"Bonjour {nom}! \n Vous avez pris le premier jeu: Défi de maths. \n Cliquez sur le bouton pour commencer")
-                num = 0
-            else:
-                #commende jeu 2 après le bouton
-                lblPrejeu.config(text=f"Bonjour {nom}! \n Vous avez pris le deuxième jeu: Calcul de monnaie. \n Cliquez sur le bouton pour commencer")
-                num = 1
-                """
 
         
     
     # Tkinter
     # Fenètre primaire
     ft = tk.Tk()
+
     ft.geometry("600x500")
     ft.title("Page primaire")
-    ft.configure()
 
     # Frame 1
     menuPrincipale = tk.Frame(ft)
@@ -76,9 +54,6 @@ def main():
     menuPrincipaleElements = tk.Frame(menuPrincipale)
     menuPrincipaleElements.pack(fill=tk.BOTH, expand=True)
     
-
-    # Frame 2
-    menuAvantJeu = tk.Frame(ft)
 
     # Infos pour menu principale
     lbltitre = tk.Label(menuPrincipaleElements, text="Bienvenue! \n Entrez votre nom et niveau scolaire pour commencer.", font="Arial 15 bold")
@@ -105,13 +80,6 @@ def main():
     btnEnseignant = tk.Button(menuPrincipale, text="Je suis un enseignant", font="Arial 15")
     btnEnseignant.pack(anchor="sw", side="left", padx=10, pady=10)
 
-
-    # Info pour menu préjeu
-    lblPrejeu = tk.Label(menuAvantJeu, font="Arial 15 bold", padx=5, pady=15)
-    lblPrejeu.grid(row=0, column=0, columnspan=3, rowspan=3)
-
-    btn2 = tk.Button(menuAvantJeu, text= "Commencer", font = "Arial 15 bold", padx=5, pady=10, command=commenceJeu)
-    btn2.grid(row=4, column=1)
 
     
 
