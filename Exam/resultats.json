@@ -1,6 +1,6 @@
 [
     {
-        "ryan": [
+        "eleve 1": [
             {
                 "reussit": 1,
                 "echecs": 2
@@ -17,25 +17,71 @@
                 "reussit": 9,
                 "echecs": 0
             }
+        ],
+        "eleve 2": [
+            {
+                "reussit": 6,
+                "echecs": 2
+            },
+            {
+                "reussit": 4,
+                "echecs": 2
+            },
+            {
+                "reussit": 15,
+                "echecs": 20
+            },
+            {
+                "reussit": 4,
+                "echecs": 6
+            }
         ]
     },
     {
-        "ryan": [
+        "eleve 1": [
             {
                 "reussit": 1,
                 "echecs": 2
             },
             {
-                "reussit": 1,
+                "reussit": 5,
                 "echecs": 2
             },
             {
-                "reussit": 1,
+                "reussit": 3,
+                "echecs": 3
+            },
+            {
+                "reussit": 4,
+                "echecs": 1
+            },
+            {
+                "reussit": 4,
+                "echecs": 0
+            }
+        ],
+        "eleve 2": [
+            {
+                "reussit": 3,
                 "echecs": 2
             },
             {
-                "reussit": 1,
+                "reussit": 8,
+                "echecs": 1
+            },
+            {
+                "reussit": 9,
                 "echecs": 2
+            },
+            {
+                "reussit": 4,
+                "echecs": 6
+            }
+        ],
+        "eleve 3": [
+            {
+                "reussit": 12,
+                "echecs": 0
             }
         ]
     }

@@ -55,43 +55,19 @@ def vide():
     # Efface l'écran
     os.system('cls' if os.name == 'nt' else 'clear')
 
-
-"""
-def saufegarde(nom, jeu, resultats):
-    # Sauvegarde les résultats dans un fichier JSON
-    if(not os.path.exists("resultats.json")):
-        with open("resultats.json", "w") as f:
-            json.dump([{},{}], f, indent=4)
-    with open("resultats.json", "r+") as f: 
-        data = json.load(f)
-        f.seek(0)
-        f.truncate()
-        if(data == None):
-            data = [{},{}]
-            data[jeu][nom] = {"reussit": resultats[0], "echecs": resultats[1]}
-        elif nom in data[jeu]:
-            dataJeu = data[jeu]
-            reussit = dataJeu[nom]["reussit"]
-            echecs = dataJeu[nom]["echecs"]
-            dataJeu[nom] = {"reussit": reussit + resultats[0], "echecs": echecs + resultats[1]}
-        else:
-            data[jeu][nom] = {"reussit": resultats[0], "echecs": resultats[1]}
-        json.dump(data, f, indent=4)
-"""
 def sauvegarde(nom, jeu, resultats):
     # Sauvegarde les résultats dans un fichier JSON
     if(not os.path.exists("resultats.json")):
         with open("resultats.json", "w") as f:
-            json.dump([{},{}], f, indent=4)
+            json.dump([{},{}], f, indent=4) # Crée un fichier vide
     with open("resultats.json", "r+") as f: 
         data = None
         try:
-            data = json.load(f)
+            data = json.load(f) # Charge les résultats
         except ValueError as e:
             if isinstance(e, json.decoder.JSONDecodeError):
                 print(f"is instance, message = {e.msg}")
-                if(e.msg == "Expecting value"):
-                    print("Empty file, manually feeding data")
+                if(e.msg == "Expecting value"): # Si le fichier est vide
                     data == [{}, {}]
             else:
                 raise RuntimeError("Something went wrong")
@@ -99,7 +75,7 @@ def sauvegarde(nom, jeu, resultats):
         f.truncate()
         if(data == None):
             data = [{},{}]
-            # SAves the results in a list. Since no results exist, create the list
+            # Sauvegarde les résultats
             data[jeu][nom] = [{"reussit": resultats[0], "echecs": resultats[1]}]
         elif nom in data[jeu]:
             dataNom:list = data[jeu][nom] # list

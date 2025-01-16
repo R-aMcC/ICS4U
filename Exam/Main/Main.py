@@ -77,7 +77,7 @@ def main():
     lblInfo = tk.Label(menuPrincipaleElements, text="" , font="Arial 12 bold")
     lblInfo.grid(row=5, column=0, columnspan=2, padx=5, pady=10)
 
-    btnEnseignant = tk.Button(menuPrincipale, text="Je suis un enseignant", font="Arial 15")
+    btnEnseignant = tk.Button(menuPrincipale, text="Je suis un enseignant", font="Arial 15", command=lambda: Selection.main(ft, nom="enseignant", enseignant=True))
     btnEnseignant.pack(anchor="sw", side="left", padx=10, pady=10)
 
 
